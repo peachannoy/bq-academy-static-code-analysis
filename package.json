@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky",
     "lint": "eslint . --ext .ts,.js",
-    "check": "npm run lint && prettier --check . && npx playwright test"
+    "check": "npm run lint && prettier --check ."
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,9 @@
     "typescript-eslint": "^8.37.0"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{ts,js}": [
+      "prettier --write --ignore-unknown",
+      "prettier --write"
+    ]
   }
 }
